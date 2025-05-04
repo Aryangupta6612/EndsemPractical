@@ -1,7 +1,7 @@
-FROM python: 3.9
+FROM python:3.9
 WORKDIR /app
-Copy requirements.txt .
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-Copy . .
+COPY . .
 EXPOSE 5000
 CMD ["python", "app.py"]
